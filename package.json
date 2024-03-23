@@ -1,0 +1,35 @@
+{
+  "name": "url-wintercg",
+  "version": "1.0.0",
+  "description": "A polyfill the Ada URL library, for use in WinterCG runtimes",
+  "author": "Jamie Birch",
+  "license": "MIT",
+  "type": "module",
+  "main": "src/index.js",
+  "files": [
+    "LICENCE-ada",
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/shirakaba/url-wintercg"
+  },
+  "bugs": {
+    "url": "https://github.com/shirakaba/url-wintercg/issues"
+  },
+  "keywords": [
+    "URL",
+    "URLSearchParams",
+    "polyfill",
+    "WinterCG"
+  ],
+  "scripts": {
+    "test": " node --expose-internals --no-warnings --expose-gc --test",
+    "format": "prettier --write .",
+    "lint": "eslint --max-warnings=0 ."
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "prettier": "^3.2.5"
+  }
+}
