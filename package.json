@@ -5,9 +5,11 @@
   "author": "Jamie Birch",
   "license": "MIT",
   "type": "module",
-  "main": "src/index.js",
+  "main": "lib/binding.js",
+  "gypfile": true,
   "files": [
     "LICENCE-ada",
+    "lib",
     "src"
   ],
   "repository": {
@@ -24,9 +26,15 @@
     "WinterCG"
   ],
   "scripts": {
-    "test": " node --expose-internals --no-warnings --expose-gc --test",
+    "build:configure": "node-gyp configure",
+    "build": "node-gyp build",
+    "test": "node --napi-modules ./test/test_binding.js",
     "format": "prettier --write .",
     "lint": "eslint --max-warnings=0 ."
+  },
+  "dependencies": {
+    "node-addon-api": "^1.1.0",
+    "node-gyp": "^10.0.1"
   },
   "devDependencies": {
     "eslint": "^8.56.0",

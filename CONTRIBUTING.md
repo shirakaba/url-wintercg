@@ -6,6 +6,12 @@
 git clone git@github.com:shirakaba/url-wintercg.git
 cd url-wintercg
 npm install
+
+# Configure node-gyp for your own system
+npm run build:configure
+
+# Run the node-gyp build
+npm run build
 ```
 
 ## Running the tests
