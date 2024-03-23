@@ -122,6 +122,14 @@ const webpackConfig = {
 };
 ```
 
+## Prerequisites
+
+Your JS engine/runtime must support:
+
+- [createRequire()](https://nodejs.org/api/module.html#modulecreaterequirefilename) (if using ESM), at least until `.node` files are supported as standard (which currently even Node.js does [not](https://github.com/nodejs/node/issues/40541)). Of note, it seems that [process.dlopen()](https://nodejs.org/dist/latest-v14.x/docs/api/esm.html#esm_no_native_module_loading) may be another approach.
+- [require()](https://nodejs.org/api/modules.html#requireid) (if using CommonJS)
+- [Node-API](https://nodejs.org/api/n-api.html)
+
 ## Resources
 
 - https://github.com/nodejs/node-addon-api/tree/main/doc

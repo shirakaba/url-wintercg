@@ -1,5 +1,5 @@
-const UrlWintercg = require('../lib/binding.js');
-const assert = require('assert');
+import { UrlWintercg } from '../lib/binding.js';
+import assert from 'assert';
 
 assert(UrlWintercg, 'The expected module is undefined');
 
@@ -14,7 +14,7 @@ function testBasic() {
 }
 
 function testInvalidParams() {
-  const instance = new UrlWintercg();
+  new UrlWintercg();
 }
 
 assert.doesNotThrow(testBasic, undefined, 'testBasic threw an expection');
