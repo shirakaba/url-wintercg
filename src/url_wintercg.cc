@@ -1,4 +1,5 @@
 #include "url_wintercg.h"
+#include "../lib/ada/ada.h"
 
 using namespace Napi;
 
@@ -22,6 +23,15 @@ UrlWintercg::UrlWintercg(const Napi::CallbackInfo& info) : ObjectWrap(info) {
 
 Napi::Value UrlWintercg::Greet(const Napi::CallbackInfo& info) {
   Napi::Env env = info.Env();
+
+  auto url = ada::parse<ada::url>("https://www.google.com");
+  if (!url) {
+    Napi::TypeError::New(env, "Failed to construct URL")
+        .ThrowAsJavaScriptException();
+    return env.Null();
+  }
+
+  printf("Constructed URL! %s\n", url->get_href().c_str());
 
   if (info.Length() < 1) {
     Napi::TypeError::New(env, "Wrong number of arguments")
